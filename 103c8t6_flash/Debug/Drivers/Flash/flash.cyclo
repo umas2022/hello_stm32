@@ -1,0 +1,3 @@
+../Drivers/Flash/flash.c:3:19:Flash_Init	1
+../Drivers/Flash/flash.c:9:19:Flash_Write_Number	2
+../Drivers/Flash/flash.c:33:10:Flash_Read_Number	1

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="HELLO_WORLD"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="HELLO_WORLD"/>
+			<item value="100-"/>
+			<item value="5"/>
+			<item value="tim5"/>
+			<item value="HAL_TIM_PeriodElapsedCallback"/>
+			<item value="NUM_MOTORS"/>
+			<item value="StepperMotorControl"/>
 			<item value="HAL_TIM_Base_Start_IT"/>
 			<item value="irqh"/>
 			<item value="irq"/>
 			<item value="655"/>
 			<item value="PeriodElapsedCallback"/>
-			<item value="HAL_TIM_PeriodElapsedCallback"/>
 			<item value="SoftUartInit"/>
 			<item value="pwm_init"/>
 			<item value="8-1"/>
-			<item value="TMC2209_Init"/>
-			<item value="huart1"/>
-			<item value="TMC2209_SendRawMessage"/>
-			<item value="speed"/>
-			<item value="write"/>
-			<item value="baud"/>
 		</list>
 		<list key="replacehistory">
 		</list>

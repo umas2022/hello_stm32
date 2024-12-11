@@ -1,0 +1,44 @@
+#include "flash.h"
+#include <string.h>
+
+HAL_StatusTypeDef Flash_Init(void)
+{
+    HAL_FLASH_Unlock();
+    return HAL_OK;
+}
+
+HAL_StatusTypeDef Flash_Write_String(uint32_t Address, const char *str)
+{
+    HAL_StatusTypeDef status = HAL_OK;
+    size_t length = strlen(str) + 1; // 包含终止符 '\0'
+
+    // 擦除页面
+    FLASH_EraseInitTypeDef EraseInitStruct;
+    uint32_t PageError = 0;
+
+    EraseInitStruct.TypeErase = FLASH_TYPEERASE_PAGES;
+    EraseInitStruct.PageAddress = Address & ~(FLASH_PAGE_SIZE - 1);
+    EraseInitStruct.NbPages = 1;
+
+    if (HAL_FLASHEx_Erase(&EraseInitStruct, &PageError) != HAL_OK)
+    {
+        return HAL_ERROR;
+    }
+
+    // 写入字符串到Flash，使用半字编程
+    for (size_t i = 0; i < length; i += 2)
+    {
+        uint16_t halfWord = (i + 1 < length) ?
+                            ((uint16_t)str[i] | ((uint16_t)str[i + 1] << 8)) :
+                            ((uint16_t)str[i]);
+
+        status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, Address + i, halfWord);
+        if (status != HAL_OK)
+        {
+            break;
+        }
+    }
+
+    HAL_FLASH_Lock();
+    return status;
+}
