@@ -1,0 +1,7 @@
+../Drivers/TMC2209/tmc2209.c:6:6:TMC2209_sendRawMessage	1
+../Drivers/TMC2209/tmc2209.c:12:6:TMC2209_Init	2
+../Drivers/TMC2209/tmc2209.c:36:6:TMC2209_setRunCurrent_100	1
+../Drivers/TMC2209/tmc2209.c:44:6:TMC2209_enableCoolStep	1
+../Drivers/TMC2209/tmc2209.c:52:6:TMC2209_enable	1
+../Drivers/TMC2209/tmc2209.c:60:9:calculate_crc	4
+../Drivers/TMC2209/tmc2209.c:84:6:TMC2209_moveAtVelocity	1

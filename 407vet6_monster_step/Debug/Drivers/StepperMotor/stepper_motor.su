@@ -1,0 +1,3 @@
+../Drivers/StepperMotor/stepper_motor.c:11:23:getNumMotors	4	static
+../Drivers/StepperMotor/stepper_motor.c:16:6:startStepperMotor	32	static
+../Drivers/StepperMotor/stepper_motor.c:43:6:HAL_TIM_PeriodElapsedCallback	24	static

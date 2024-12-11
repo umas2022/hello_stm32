@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="HAL_TIM_Base_Start_IT"/>
+			<item value="irqh"/>
+			<item value="irq"/>
+			<item value="655"/>
+			<item value="PeriodElapsedCallback"/>
+			<item value="HAL_TIM_PeriodElapsedCallback"/>
+			<item value="SoftUartInit"/>
+			<item value="pwm_init"/>
+			<item value="8-1"/>
+			<item value="TMC2209_Init"/>
+			<item value="huart1"/>
+			<item value="TMC2209_SendRawMessage"/>
+			<item value="speed"/>
+			<item value="write"/>
+			<item value="baud"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1255"/>
+		<item key="DIALOG_Y_ORIGIN" value="191"/>
+		<item key="DIALOG_WIDTH" value="369"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
+	</section>
+</section>

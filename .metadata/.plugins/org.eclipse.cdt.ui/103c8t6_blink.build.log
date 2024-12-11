@@ -1,0 +1,10 @@
+14:42:28 **** Incremental Build of configuration Debug for project 103c8t6_blink ****
+make -j12 all 
+arm-none-eabi-size  103c8t6_blink.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4664	     12	   1572	   6248	   1868	103c8t6_blink.elf
+Finished building: default.size.stdout
+ 
+
+14:42:29 Build Finished. 0 errors, 0 warnings. (took 534ms)
+

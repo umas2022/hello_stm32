@@ -1,0 +1,10 @@
+16:17:23 **** Incremental Build of configuration Debug for project sg90bot_hello ****
+make -j12 all 
+arm-none-eabi-size  sg90bot_hello.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7004	     12	   1644	   8660	   21d4	sg90bot_hello.elf
+Finished building: default.size.stdout
+ 
+
+16:17:24 Build Finished. 0 errors, 0 warnings. (took 415ms)
+
