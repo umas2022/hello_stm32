@@ -1,4 +1,4 @@
-15:26:14 **** Incremental Build of configuration Debug for project 103c8t6_software_serial ****
+11:53:58 **** Incremental Build of configuration Debug for project 103c8t6_software_serial ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/ws-stm32/103c8t6_software_serial/Drivers/SoftUart" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "103c8t6_software_serial.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\ws-stm32\103c8t6_software_serial\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="103c8t6_software_serial.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -13,5 +13,5 @@ Finished building: default.size.stdout
 Finished building: 103c8t6_software_serial.list
  
 
-15:26:15 Build Finished. 0 errors, 0 warnings. (took 1s.508ms)
+11:54:00 Build Finished. 0 errors, 0 warnings. (took 1s.832ms)
 

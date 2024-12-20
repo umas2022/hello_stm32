@@ -1,0 +1,8 @@
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:8:6:TMC2209_sendRawMessage	56	dynamic
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:18:9:calculate_crc	32	static
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:42:6:TMC2209_Init	152	static
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:66:6:TMC2209_setRunCurrent_100	24	static
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:76:6:TMC2209_enable	24	static
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:86:6:TMC2209_moveAtVelocity	32	static
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:104:6:TMC2209_enableCoolStep	24	static
+../Drivers/TMC2209_SoftUart/tmc2209_uart.c:112:6:TMC2209_enableStallGuard	32	static

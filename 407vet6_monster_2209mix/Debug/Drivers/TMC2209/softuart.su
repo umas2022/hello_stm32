@@ -1,0 +1,14 @@
+../Drivers/TMC2209/softuart.c:30:15:SoftUartGpioReadPin	16	static
+../Drivers/TMC2209/softuart.c:35:6:SoftUartGpioWritePin	16	static
+../Drivers/TMC2209/softuart.c:41:17:SoftUartInit	24	static
+../Drivers/TMC2209/softuart.c:76:6:SoftUartTransmitBit	16	static
+../Drivers/TMC2209/softuart.c:81:17:SoftUartEnableRx	16	static
+../Drivers/TMC2209/softuart.c:89:17:SoftUartDisableRx	16	static
+../Drivers/TMC2209/softuart.c:97:9:SoftUartRxAlavailable	16	static
+../Drivers/TMC2209/softuart.c:102:17:SoftUartReadRxBuffer	24	static
+../Drivers/TMC2209/softuart.c:119:6:SoftUartTxProcess	16	static
+../Drivers/TMC2209/softuart.c:179:6:SoftUartRxDataBitProcess	16	static
+../Drivers/TMC2209/softuart.c:222:6:SoftUartWaitUntilTxComplate	16	static
+../Drivers/TMC2209/softuart.c:228:17:SoftUartPuts	24	static
+../Drivers/TMC2209/softuart.c:250:9:SoftUartScanRxPorts	16	static
+../Drivers/TMC2209/softuart.c:276:6:SoftUartHandler	16	static

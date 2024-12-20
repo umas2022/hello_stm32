@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_blink Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_tmc2209_hello Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_tmc2209_step Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_software_serial Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_flash Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_blink Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_tmc2209_hello Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_tmc2209_step Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_flash Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_software_serial Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_external_interrupt Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_blink\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:103c8t6_blink\ Debug/activeLaunchTarget=null\:---

@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define soft_uart_tx_Pin GPIO_PIN_15
+#define soft_uart_tx_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

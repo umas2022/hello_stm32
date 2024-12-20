@@ -1,0 +1,14 @@
+../Drivers/TMC2209_SoftUart/softuart.c:30:15:SoftUartGpioReadPin	1
+../Drivers/TMC2209_SoftUart/softuart.c:36:6:SoftUartGpioWritePin	1
+../Drivers/TMC2209_SoftUart/softuart.c:42:17:SoftUartInit	2
+../Drivers/TMC2209_SoftUart/softuart.c:76:6:SoftUartTransmitBit	1
+../Drivers/TMC2209_SoftUart/softuart.c:82:17:SoftUartEnableRx	2
+../Drivers/TMC2209_SoftUart/softuart.c:90:17:SoftUartDisableRx	2
+../Drivers/TMC2209_SoftUart/softuart.c:98:9:SoftUartRxAlavailable	1
+../Drivers/TMC2209_SoftUart/softuart.c:104:17:SoftUartReadRxBuffer	4
+../Drivers/TMC2209_SoftUart/softuart.c:121:6:SoftUartTxProcess	9
+../Drivers/TMC2209_SoftUart/softuart.c:189:6:SoftUartRxDataBitProcess	9
+../Drivers/TMC2209_SoftUart/softuart.c:237:6:SoftUartWaitUntilTxComplate	2
+../Drivers/TMC2209_SoftUart/softuart.c:243:17:SoftUartPuts	4
+../Drivers/TMC2209_SoftUart/softuart.c:265:9:SoftUartScanRxPorts	5
+../Drivers/TMC2209_SoftUart/softuart.c:294:6:SoftUartHandler	6

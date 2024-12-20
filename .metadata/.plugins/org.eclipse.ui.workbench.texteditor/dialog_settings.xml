@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="HELLO_WORLD"/>
+		<item key="selection" value="GPIO_PIN_2"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="GPIO_PIN_2"/>
+			<item value="GPIO_PIN_15"/>
 			<item value="HELLO_WORLD"/>
 			<item value="100-"/>
 			<item value="5"/>
@@ -21,8 +23,6 @@
 			<item value="655"/>
 			<item value="PeriodElapsedCallback"/>
 			<item value="SoftUartInit"/>
-			<item value="pwm_init"/>
-			<item value="8-1"/>
 		</list>
 		<list key="replacehistory">
 		</list>

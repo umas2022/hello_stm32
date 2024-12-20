@@ -1,0 +1,19 @@
+#ifndef STEPPER_MOTOR_H
+#define STEPPER_MOTOR_H
+
+#include "stm32f4xx_hal.h"
+#include "main.h"
+
+
+// 外部变量声明
+extern StepperMotorControl motors[];
+
+// 电机运动控制
+void TMC2209_startStepperMotor(uint8_t motorIndex, uint32_t steps, float speed, int8_t direction);
+
+// 电机运动控制中断回调
+void TMC2209_stepHandler(void);
+
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+
+#endif // STEPPER_MOTOR_H

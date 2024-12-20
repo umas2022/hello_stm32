@@ -101,7 +101,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 
-  // 启用定时器
+  // 启用定时�?????????
   if (HAL_TIM_Base_Start_IT(&htim3) != HAL_OK)
   {
     /* Starting Error */
@@ -109,7 +109,7 @@ int main(void)
   }
 
   // 初始化软UART，只配置TX引脚
-  SoftUartInit(0, GPIOB, GPIO_PIN_15, NULL, 0); // RX参数设为NULL�????0，因为我们不�????要接收功�????
+  SoftUartInit(0, GPIOB, GPIO_PIN_15, NULL, 0); // RX参数设为NULL�?????????????0，因为我们不�?????????????要接收功�?????????????
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -183,9 +183,9 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 74;
+  htim3.Init.Prescaler = 4;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 19;
+  htim3.Init.Period = 149;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -226,14 +226,14 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(soft_uart_tx_GPIO_Port, soft_uart_tx_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pin : PB15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  /*Configure GPIO pin : soft_uart_tx_Pin */
+  GPIO_InitStruct.Pin = soft_uart_tx_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(soft_uart_tx_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
