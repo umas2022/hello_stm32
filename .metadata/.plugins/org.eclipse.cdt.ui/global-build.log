@@ -1,17 +1,16 @@
-17:50:44 **** Incremental Build of configuration Debug for project 407vet6_monster_2209mix ****
+19:00:19 **** Incremental Build of configuration Debug for project 407vet6_monster_6dof ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/ws-stm32/407vet6_monster_2209mix/Drivers/TMC2209" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "407vet6_monster_2209mix.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\ws-stm32\407vet6_monster_2209mix\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="407vet6_monster_2209mix.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 407vet6_monster_2209mix.elf
+arm-none-eabi-g++ -o "407vet6_monster_6dof.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\ws-stm32\407vet6_monster_6dof\STM32F407VETX_FLASH.ld" -Wl,-Map="407vet6_monster_6dof.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: 407vet6_monster_6dof.elf
  
-arm-none-eabi-size  407vet6_monster_2209mix.elf 
-arm-none-eabi-objdump -h -S 407vet6_monster_2209mix.elf  > "407vet6_monster_2209mix.list"
+arm-none-eabi-size  407vet6_monster_6dof.elf 
+arm-none-eabi-objdump -h -S 407vet6_monster_6dof.elf  > "407vet6_monster_6dof.list"
    text	   data	    bss	    dec	    hex	filename
-  11872	     60	   1844	  13776	   35d0	407vet6_monster_2209mix.elf
-arm-none-eabi-objcopy  -O ihex 407vet6_monster_2209mix.elf  "407vet6_monster_2209mix.hex"
+  13108	     12	   1924	  15044	   3ac4	407vet6_monster_6dof.elf
+arm-none-eabi-objcopy  -O ihex 407vet6_monster_6dof.elf  "407vet6_monster_6dof.hex"
 Finished building: default.size.stdout
  
-Finished building: 407vet6_monster_2209mix.hex
+Finished building: 407vet6_monster_6dof.hex
  
-Finished building: 407vet6_monster_2209mix.list
+Finished building: 407vet6_monster_6dof.list
  

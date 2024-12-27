@@ -1,0 +1,14 @@
+#include "tmc2209.h"
+
+void write(uint8_t register_address, uint32_t data) {
+	WriteReadReplyDatagram write_datagram;
+	write_datagram.bytes = 0;
+	write_datagram.sync = SYNC;
+	write_datagram.serial_address = 0 ;
+//	write_datagram.register_address = register_address;
+//	write_datagram.rw = RW_WRITE;
+//	write_datagram.data = reverseData(data);
+//	write_datagram.crc = calculateCrc(write_datagram, WRITE_READ_REPLY_DATAGRAM_SIZE);
+//
+//	sendDatagramUnidirectional(write_datagram, WRITE_READ_REPLY_DATAGRAM_SIZE);
+}

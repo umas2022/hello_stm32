@@ -1,19 +1,19 @@
 /**
- ******************************************************************************
- * @file    stm32f4xx_hal_rcc_ex.h
- * @author  MCD Application Team
- * @brief   Header file of RCC HAL Extension module.
- ******************************************************************************
- * @attention
- *
- * Copyright (c) 2017 STMicroelectronics.
- * All rights reserved.
- *
- * This software is licensed under terms that can be found in the LICENSE file in
- * the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
- ******************************************************************************
- */
+  ******************************************************************************
+  * @file    stm32f4xx_hal_rcc_ex.h
+  * @author  MCD Application Team
+  * @brief   Header file of RCC HAL Extension module.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2017 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file in
+  * the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  ******************************************************************************
+  */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F4xx_HAL_RCC_EX_H
@@ -27,40 +27,41 @@ extern "C" {
 #include "stm32f4xx_hal_def.h"
 
 /** @addtogroup STM32F4xx_HAL_Driver
- * @{
- */
+  * @{
+  */
 
 /** @addtogroup RCCEx
- * @{
- */
+  * @{
+  */
 
 /* Exported types ------------------------------------------------------------*/
 /** @defgroup RCCEx_Exported_Types RCCEx Exported Types
- * @{
- */
+  * @{
+  */
 
 /**
- * @brief  RCC PLL configuration structure definition
- */
-typedef struct {
-	uint32_t PLLState; /*!< The new state of the PLL.
-	 This parameter can be a value of @ref RCC_PLL_Config                      */
+  * @brief  RCC PLL configuration structure definition
+  */
+typedef struct
+{
+  uint32_t PLLState;   /*!< The new state of the PLL.
+                            This parameter can be a value of @ref RCC_PLL_Config                      */
 
-	uint32_t PLLSource; /*!< RCC_PLLSource: PLL entry clock source.
-	 This parameter must be a value of @ref RCC_PLL_Clock_Source               */
+  uint32_t PLLSource;  /*!< RCC_PLLSource: PLL entry clock source.
+                            This parameter must be a value of @ref RCC_PLL_Clock_Source               */
 
-	uint32_t PLLM; /*!< PLLM: Division factor for PLL VCO input clock.
-	 This parameter must be a number between Min_Data = 0 and Max_Data = 63    */
+  uint32_t PLLM;       /*!< PLLM: Division factor for PLL VCO input clock.
+                            This parameter must be a number between Min_Data = 0 and Max_Data = 63    */
 
-	uint32_t PLLN; /*!< PLLN: Multiplication factor for PLL VCO output clock.
-	 This parameter must be a number between Min_Data = 50 and Max_Data = 432
-	 except for STM32F411xE devices where the Min_Data = 192 */
+  uint32_t PLLN;       /*!< PLLN: Multiplication factor for PLL VCO output clock.
+                            This parameter must be a number between Min_Data = 50 and Max_Data = 432
+                            except for STM32F411xE devices where the Min_Data = 192 */
 
-	uint32_t PLLP; /*!< PLLP: Division factor for main system clock (SYSCLK).
-	 This parameter must be a value of @ref RCC_PLLP_Clock_Divider             */
+  uint32_t PLLP;       /*!< PLLP: Division factor for main system clock (SYSCLK).
+                            This parameter must be a value of @ref RCC_PLLP_Clock_Divider             */
 
-	uint32_t PLLQ; /*!< PLLQ: Division factor for OTG FS, SDIO and RNG clocks.
-	 This parameter must be a number between Min_Data = 2 and Max_Data = 15    */
+  uint32_t PLLQ;       /*!< PLLQ: Division factor for OTG FS, SDIO and RNG clocks.
+                            This parameter must be a number between Min_Data = 2 and Max_Data = 15    */
 #if defined(STM32F410Tx) || defined(STM32F410Cx) || defined(STM32F410Rx) || defined(STM32F446xx) || defined(STM32F469xx) ||\
     defined(STM32F479xx) || defined(STM32F412Zx) || defined(STM32F412Vx) || defined(STM32F412Rx) || defined(STM32F412Cx) ||\
     defined(STM32F413xx) || defined(STM32F423xx)
@@ -376,37 +377,39 @@ typedef struct
 #if defined(STM32F405xx) || defined(STM32F415xx) || defined(STM32F407xx) || defined(STM32F417xx) ||\
     defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE)
 /**
- * @brief  PLLI2S Clock structure definition
- */
-typedef struct {
+  * @brief  PLLI2S Clock structure definition
+  */
+typedef struct
+{
 #if defined(STM32F411xE)
   uint32_t PLLI2SM;    /*!< PLLM: Division factor for PLLI2S VCO input clock.
                             This parameter must be a number between Min_Data = 2 and Max_Data = 62  */
 #endif /* STM32F411xE */
 
-	uint32_t PLLI2SN; /*!< Specifies the multiplication factor for PLLI2S VCO output clock.
-	 This parameter must be a number between Min_Data = 50 and Max_Data = 432
-	 Except for STM32F411xE devices where the Min_Data = 192.
-	 This parameter will be used only when PLLI2S is selected as Clock Source I2S or SAI */
+  uint32_t PLLI2SN;    /*!< Specifies the multiplication factor for PLLI2S VCO output clock.
+                            This parameter must be a number between Min_Data = 50 and Max_Data = 432
+                            Except for STM32F411xE devices where the Min_Data = 192.
+                            This parameter will be used only when PLLI2S is selected as Clock Source I2S or SAI */
 
-	uint32_t PLLI2SR; /*!< Specifies the division factor for I2S clock.
-	 This parameter must be a number between Min_Data = 2 and Max_Data = 7.
-	 This parameter will be used only when PLLI2S is selected as Clock Source I2S or SAI */
+  uint32_t PLLI2SR;    /*!< Specifies the division factor for I2S clock.
+                            This parameter must be a number between Min_Data = 2 and Max_Data = 7.
+                            This parameter will be used only when PLLI2S is selected as Clock Source I2S or SAI */
 
 } RCC_PLLI2SInitTypeDef;
 
 /**
- * @brief  RCC extended clocks structure definition
- */
-typedef struct {
-	uint32_t PeriphClockSelection; /*!< The Extended Clock to be configured.
-	 This parameter can be a value of @ref RCCEx_Periph_Clock_Selection */
+  * @brief  RCC extended clocks structure definition
+  */
+typedef struct
+{
+  uint32_t PeriphClockSelection; /*!< The Extended Clock to be configured.
+                                      This parameter can be a value of @ref RCCEx_Periph_Clock_Selection */
 
-	RCC_PLLI2SInitTypeDef PLLI2S; /*!< PLL I2S structure parameters.
-	 This parameter will be used only when PLLI2S is selected as Clock Source I2S or SAI */
+  RCC_PLLI2SInitTypeDef PLLI2S;  /*!< PLL I2S structure parameters.
+                                      This parameter will be used only when PLLI2S is selected as Clock Source I2S or SAI */
 
-	uint32_t RTCClockSelection; /*!< Specifies RTC Clock Prescalers Selection.
-	 This parameter can be a value of @ref RCC_RTC_Clock_Source */
+  uint32_t RTCClockSelection;      /*!< Specifies RTC Clock Prescalers Selection.
+                                       This parameter can be a value of @ref RCC_RTC_Clock_Source */
 #if defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE)
   uint8_t TIMPresSelection;        /*!< Specifies TIM Clock Source Selection.
                                       This parameter can be a value of @ref RCCEx_TIM_PRescaler_Selection */
@@ -414,17 +417,17 @@ typedef struct {
 } RCC_PeriphCLKInitTypeDef;
 #endif /* STM32F405xx || STM32F415xx || STM32F407xx || STM32F417xx || STM32F401xC || STM32F401xE || STM32F411xE */
 /**
- * @}
- */
+  * @}
+  */
 
 /* Exported constants --------------------------------------------------------*/
 /** @defgroup RCCEx_Exported_Constants RCCEx Exported Constants
- * @{
- */
+  * @{
+  */
 
 /** @defgroup RCCEx_Periph_Clock_Selection RCC Periph Clock Selection
- * @{
- */
+  * @{
+  */
 /* Peripheral Clock source for STM32F412Zx/STM32F412Vx/STM32F412Rx/STM32F412Cx */
 #if defined(STM32F412Zx) || defined(STM32F412Vx) || defined(STM32F412Rx) || defined(STM32F412Cx) ||\
     defined(STM32F413xx) || defined(STM32F423xx)
@@ -513,26 +516,26 @@ typedef struct {
 #endif /* STM32F401xC || STM32F401xE || STM32F411xE */
 /*----------------------------------------------------------------------------*/
 /**
- * @}
- */
+  * @}
+  */
 #if defined(STM32F405xx) || defined(STM32F415xx) || defined(STM32F407xx) || defined(STM32F417xx) || \
     defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx) || defined(STM32F439xx) || \
     defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE) || defined(STM32F469xx) || \
     defined(STM32F479xx)
 /** @defgroup RCCEx_I2S_Clock_Source I2S Clock Source
- * @{
- */
+  * @{
+  */
 #define RCC_I2SCLKSOURCE_PLLI2S         0x00000000U
 #define RCC_I2SCLKSOURCE_EXT            RCC_CFGR_I2SSRC
 /**
- * @}
- */
+  * @}
+  */
 #endif /* STM32F405xx || STM32F415xx || STM32F407xx || STM32F417xx || STM32F427xx || STM32F437xx || STM32F429xx || STM32F439xx ||
           STM32F401xC || STM32F401xE || STM32F411xE || STM32F469xx || STM32F479xx */
 
 /** @defgroup RCCEx_PLLSAI_DIVR RCC PLLSAI DIVR
- * @{
- */
+  * @{
+  */
 #if defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx) || defined(STM32F439xx) || defined(STM32F446xx) ||\
     defined(STM32F469xx) || defined(STM32F479xx)
 #define RCC_PLLSAIDIVR_2                0x00000000U
@@ -541,12 +544,12 @@ typedef struct {
 #define RCC_PLLSAIDIVR_16               0x00030000U
 #endif /* STM32F427xx || STM32F437xx || STM32F429xx || STM32F439xx || STM32F446xx || STM32F469xx || STM32F479xx */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_PLLI2SP_Clock_Divider RCC PLLI2SP Clock Divider
- * @{
- */
+  * @{
+  */
 #if defined(STM32F446xx) || defined(STM32F412Zx) || defined(STM32F412Vx) || \
     defined(STM32F412Rx) || defined(STM32F412Cx)
 #define RCC_PLLI2SP_DIV2                  0x00000002U
@@ -555,12 +558,12 @@ typedef struct {
 #define RCC_PLLI2SP_DIV8                  0x00000008U
 #endif /* STM32F446xx || STM32F412Zx || STM32F412Vx || STM32F412Rx || STM32F412Cx */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_PLLSAIP_Clock_Divider RCC PLLSAIP Clock Divider
- * @{
- */
+  * @{
+  */
 #if defined(STM32F446xx) || defined(STM32F469xx) || defined(STM32F479xx)
 #define RCC_PLLSAIP_DIV2                  0x00000002U
 #define RCC_PLLSAIP_DIV4                  0x00000004U
@@ -568,8 +571,8 @@ typedef struct {
 #define RCC_PLLSAIP_DIV8                  0x00000008U
 #endif /* STM32F446xx || STM32F469xx || STM32F479xx */
 /**
- * @}
- */
+  * @}
+  */
 
 #if defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx) || defined(STM32F439xx) || defined(STM32F469xx) || defined(STM32F479xx)
 /** @defgroup RCCEx_SAI_BlockA_Clock_Source  RCC SAI BlockA Clock Source
@@ -921,15 +924,15 @@ typedef struct {
     defined(STM32F469xx) || defined(STM32F479xx) || defined(STM32F412Zx) || defined(STM32F412Vx) || \
     defined(STM32F412Rx) || defined(STM32F412Cx) || defined(STM32F413xx) || defined(STM32F423xx)
 /** @defgroup RCC_MCO2_Clock_Source MCO2 Clock Source
- * @{
- */
+  * @{
+  */
 #define RCC_MCO2SOURCE_SYSCLK            0x00000000U
 #define RCC_MCO2SOURCE_PLLI2SCLK         RCC_CFGR_MCO2_0
 #define RCC_MCO2SOURCE_HSE               RCC_CFGR_MCO2_1
 #define RCC_MCO2SOURCE_PLLCLK            RCC_CFGR_MCO2
 /**
- * @}
- */
+  * @}
+  */
 #endif /* STM32F405xx || STM32F415xx || STM32F407xx || STM32F417xx || STM32F427xx || STM32F437xx || STM32F429xx || STM32F439xx ||
           STM32F401xC || STM32F401xE || STM32F411xE || STM32F446xx || STM32F469xx || STM32F479xx || STM32F412Zx || STM32F412Vx ||
           STM32F412Rx || STM32F413xx | STM32F423xx */
@@ -948,13 +951,13 @@ typedef struct {
 #endif /* STM32F410Tx || STM32F410Cx || STM32F410Rx */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /* Exported macro ------------------------------------------------------------*/
 /** @defgroup RCCEx_Exported_Macros RCCEx Exported Macros
- * @{
- */
+  * @{
+  */
 /*------------------- STM32F42xxx/STM32F43xxx/STM32F469xx/STM32F479xx --------*/
 #if defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx)|| defined(STM32F439xx) || defined(STM32F469xx) || defined(STM32F479xx)
 /** @defgroup RCCEx_AHB1_Clock_Enable_Disable AHB1 Peripheral Clock Enable Disable
@@ -2025,12 +2028,12 @@ typedef struct {
 /*----------------------------------- STM32F40xxx/STM32F41xxx-----------------*/
 #if defined(STM32F405xx) || defined(STM32F415xx) || defined(STM32F407xx)|| defined(STM32F417xx)
 /** @defgroup RCCEx_AHB1_Clock_Enable_Disable AHB1 Peripheral Clock Enable Disable
- * @brief  Enables or disables the AHB1 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Enables or disables the AHB1 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_BKPSRAM_CLK_ENABLE() do { \
                                             __IO uint32_t tmpreg = 0x00U; \
                                             SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_BKPSRAMEN);\
@@ -2113,8 +2116,8 @@ typedef struct {
 #define __HAL_RCC_CRC_CLK_DISABLE()             (RCC->AHB1ENR &= ~(RCC_AHB1ENR_CRCEN))
 #if defined(STM32F407xx)|| defined(STM32F417xx)
 /**
- * @brief  Enable ETHERNET clock.
- */
+  * @brief  Enable ETHERNET clock.
+  */
 #define __HAL_RCC_ETHMAC_CLK_ENABLE()  do { \
                                             __IO uint32_t tmpreg = 0x00U; \
                                             SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_ETHMACEN);\
@@ -2150,8 +2153,8 @@ typedef struct {
                                            } while(0U)
 
 /**
- * @brief  Disable ETHERNET clock.
- */
+  * @brief  Disable ETHERNET clock.
+  */
 #define __HAL_RCC_ETHMAC_CLK_DISABLE()    (RCC->AHB1ENR &= ~(RCC_AHB1ENR_ETHMACEN))
 #define __HAL_RCC_ETHMACTX_CLK_DISABLE()  (RCC->AHB1ENR &= ~(RCC_AHB1ENR_ETHMACTXEN))
 #define __HAL_RCC_ETHMACRX_CLK_DISABLE()  (RCC->AHB1ENR &= ~(RCC_AHB1ENR_ETHMACRXEN))
@@ -2163,16 +2166,16 @@ typedef struct {
                                              } while(0U)
 #endif /* STM32F407xx || STM32F417xx */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB1_Peripheral_Clock_Enable_Disable_Status AHB1 Peripheral Clock Enable Disable Status
- * @brief  Get the enable or disable status of the AHB1 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Get the enable or disable status of the AHB1 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_BKPSRAM_IS_CLK_ENABLED()          ((RCC->AHB1ENR & (RCC_AHB1ENR_BKPSRAMEN)) != RESET)
 #define __HAL_RCC_CCMDATARAMEN_IS_CLK_ENABLED()     ((RCC->AHB1ENR & (RCC_AHB1ENR_CCMDATARAMEN)) != RESET)
 #define __HAL_RCC_CRC_IS_CLK_ENABLED()              ((RCC->AHB1ENR & (RCC_AHB1ENR_CRCEN)) != RESET)
@@ -2196,8 +2199,8 @@ typedef struct {
 #define __HAL_RCC_CRC_IS_CLK_DISABLED()             ((RCC->AHB1ENR & (RCC_AHB1ENR_CRCEN)) == RESET)
 #if defined(STM32F407xx)|| defined(STM32F417xx)
 /**
- * @brief  Enable ETHERNET clock.
- */
+  * @brief  Enable ETHERNET clock.
+  */
 #define __HAL_RCC_ETHMAC_IS_CLK_ENABLED()     ((RCC->AHB1ENR & (RCC_AHB1ENR_ETHMACEN)) != RESET)
 #define __HAL_RCC_ETHMACTX_IS_CLK_ENABLED()   ((RCC->AHB1ENR & (RCC_AHB1ENR_ETHMACTXEN)) != RESET)
 #define __HAL_RCC_ETHMACRX_IS_CLK_ENABLED()   ((RCC->AHB1ENR & (RCC_AHB1ENR_ETHMACRXEN)) != RESET)
@@ -2206,8 +2209,8 @@ typedef struct {
                                                __HAL_RCC_ETHMACTX_IS_CLK_ENABLED() && \
                                                __HAL_RCC_ETHMACRX_IS_CLK_ENABLED())
 /**
- * @brief  Disable ETHERNET clock.
- */
+  * @brief  Disable ETHERNET clock.
+  */
 #define __HAL_RCC_ETHMAC_IS_CLK_DISABLED()    ((RCC->AHB1ENR & (RCC_AHB1ENR_ETHMACEN)) == RESET)
 #define __HAL_RCC_ETHMACTX_IS_CLK_DISABLED()  ((RCC->AHB1ENR & (RCC_AHB1ENR_ETHMACTXEN)) == RESET)
 #define __HAL_RCC_ETHMACRX_IS_CLK_DISABLED()  ((RCC->AHB1ENR & (RCC_AHB1ENR_ETHMACRXEN)) == RESET)
@@ -2217,16 +2220,16 @@ typedef struct {
                                                 __HAL_RCC_ETHMACRX_IS_CLK_DISABLED())
 #endif /* STM32F407xx || STM32F417xx */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB2_Clock_Enable_Disable AHB2 Peripheral Clock Enable Disable
- * @brief  Enable or disable the AHB2 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Enable or disable the AHB2 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_USB_OTG_FS_CLK_ENABLE()  do {(RCC->AHB2ENR |= (RCC_AHB2ENR_OTGFSEN));\
                                                 __HAL_RCC_SYSCFG_CLK_ENABLE();\
                                               }while(0U)
@@ -2272,16 +2275,17 @@ typedef struct {
 #define __HAL_RCC_HASH_CLK_DISABLE()  (RCC->AHB2ENR &= ~(RCC_AHB2ENR_HASHEN))
 #endif /* STM32F415xx || STM32F417xx */
 /**
- * @}
- */
+  * @}
+  */
+
 
 /** @defgroup RCCEx_AHB2_Peripheral_Clock_Enable_Disable_Status AHB2 Peripheral Clock Enable Disable Status
- * @brief  Get the enable or disable status of the AHB2 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Get the enable or disable status of the AHB2 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_USB_OTG_FS_IS_CLK_ENABLED()  ((RCC->AHB2ENR & (RCC_AHB2ENR_OTGFSEN)) != RESET)
 #define __HAL_RCC_USB_OTG_FS_IS_CLK_DISABLED() ((RCC->AHB2ENR & (RCC_AHB2ENR_OTGFSEN)) == RESET)
 
@@ -2301,16 +2305,16 @@ typedef struct {
 #define __HAL_RCC_HASH_IS_CLK_DISABLED()  ((RCC->AHB2ENR & (RCC_AHB2ENR_HASHEN)) == RESET)
 #endif /* STM32F415xx || STM32F417xx */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB3_Clock_Enable_Disable AHB3 Peripheral Clock Enable Disable
- * @brief  Enables or disables the AHB3 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Enables or disables the AHB3 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_FSMC_CLK_ENABLE()   do { \
                                            __IO uint32_t tmpreg = 0x00U; \
                                            SET_BIT(RCC->AHB3ENR, RCC_AHB3ENR_FSMCEN);\
@@ -2320,29 +2324,29 @@ typedef struct {
                                          } while(0U)
 #define __HAL_RCC_FSMC_CLK_DISABLE() (RCC->AHB3ENR &= ~(RCC_AHB3ENR_FSMCEN))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB3_Peripheral_Clock_Enable_Disable_Status AHB3 Peripheral Clock Enable Disable Status
- * @brief  Get the enable or disable status of the AHB3 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Get the enable or disable status of the AHB3 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_FSMC_IS_CLK_ENABLED()   ((RCC->AHB3ENR & (RCC_AHB3ENR_FSMCEN)) != RESET)
 #define __HAL_RCC_FSMC_IS_CLK_DISABLED()  ((RCC->AHB3ENR & (RCC_AHB3ENR_FSMCEN)) == RESET)
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB1_Clock_Enable_Disable APB1 Peripheral Clock Enable Disable
- * @brief  Enable or disable the Low Speed APB (APB1) peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Enable or disable the Low Speed APB (APB1) peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_TIM6_CLK_ENABLE()   do { \
                                            __IO uint32_t tmpreg = 0x00U; \
                                            SET_BIT(RCC->APB1ENR, RCC_APB1ENR_TIM6EN);\
@@ -2472,16 +2476,16 @@ typedef struct {
 #define __HAL_RCC_CAN2_CLK_DISABLE()   (RCC->APB1ENR &= ~(RCC_APB1ENR_CAN2EN))
 #define __HAL_RCC_DAC_CLK_DISABLE()    (RCC->APB1ENR &= ~(RCC_APB1ENR_DACEN))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB1_Peripheral_Clock_Enable_Disable_Status APB1 Peripheral Clock Enable Disable Status
- * @brief  Get the enable or disable status of the APB1 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Get the enable or disable status of the APB1 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_TIM2_IS_CLK_ENABLED()   ((RCC->APB1ENR & (RCC_APB1ENR_TIM2EN)) != RESET)
 #define __HAL_RCC_TIM3_IS_CLK_ENABLED()   ((RCC->APB1ENR & (RCC_APB1ENR_TIM3EN)) != RESET)
 #define __HAL_RCC_TIM4_IS_CLK_ENABLED()   ((RCC->APB1ENR & (RCC_APB1ENR_TIM4EN)) != RESET)
@@ -2516,16 +2520,16 @@ typedef struct {
 #define __HAL_RCC_CAN2_IS_CLK_DISABLED()   ((RCC->APB1ENR & (RCC_APB1ENR_CAN2EN)) == RESET)
 #define __HAL_RCC_DAC_IS_CLK_DISABLED()    ((RCC->APB1ENR & (RCC_APB1ENR_DACEN)) == RESET)
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB2_Clock_Enable_Disable APB2 Peripheral Clock Enable Disable
- * @brief  Enable or disable the High Speed APB (APB2) peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Enable or disable the High Speed APB (APB2) peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_TIM8_CLK_ENABLE()   do { \
                                            __IO uint32_t tmpreg = 0x00U; \
                                            SET_BIT(RCC->APB2ENR, RCC_APB2ENR_TIM8EN);\
@@ -2576,16 +2580,16 @@ typedef struct {
 #define __HAL_RCC_ADC2_CLK_DISABLE()   (RCC->APB2ENR &= ~(RCC_APB2ENR_ADC2EN))
 #define __HAL_RCC_ADC3_CLK_DISABLE()   (RCC->APB2ENR &= ~(RCC_APB2ENR_ADC3EN))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB2_Peripheral_Clock_Enable_Disable_Status APB2 Peripheral Clock Enable Disable Status
- * @brief  Get the enable or disable status of the APB2 peripheral clock.
- * @note   After reset, the peripheral clock (used for registers read/write access)
- *         is disabled and the application software has to enable this clock before
- *         using it.
- * @{
- */
+  * @brief  Get the enable or disable status of the APB2 peripheral clock.
+  * @note   After reset, the peripheral clock (used for registers read/write access)
+  *         is disabled and the application software has to enable this clock before
+  *         using it.
+  * @{
+  */
 #define __HAL_RCC_SDIO_IS_CLK_ENABLED()    ((RCC->APB2ENR & (RCC_APB2ENR_SDIOEN)) != RESET)
 #define __HAL_RCC_SPI4_IS_CLK_ENABLED()    ((RCC->APB2ENR & (RCC_APB2ENR_SPI4EN)) != RESET)
 #define __HAL_RCC_TIM10_IS_CLK_ENABLED()   ((RCC->APB2ENR & (RCC_APB2ENR_TIM10EN)) != RESET)
@@ -2600,13 +2604,13 @@ typedef struct {
 #define __HAL_RCC_ADC2_IS_CLK_DISABLED()   ((RCC->APB2ENR & (RCC_APB2ENR_ADC2EN)) == RESET)
 #define __HAL_RCC_ADC3_IS_CLK_DISABLED()   ((RCC->APB2ENR & (RCC_APB2ENR_ADC3EN)) == RESET)
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB1_Force_Release_Reset AHB1 Force Release Reset
- * @brief  Force or release AHB1 peripheral reset.
- * @{
- */
+  * @brief  Force or release AHB1 peripheral reset.
+  * @{
+  */
 #if defined (STM32F405xx) || defined (STM32F415xx)
 #define __HAL_RCC_AHB1_FORCE_RESET()     (RCC->AHB1RSTR = 0x206011FFU)
 #endif /* STM32F405xx || STM32F415xx */
@@ -2631,13 +2635,13 @@ typedef struct {
 #define __HAL_RCC_USB_OTG_HS_RELEASE_RESET()  (RCC->AHB1RSTR &= ~(RCC_AHB1RSTR_OTGHRST))
 #define __HAL_RCC_CRC_RELEASE_RESET()    (RCC->AHB1RSTR &= ~(RCC_AHB1RSTR_CRCRST))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB2_Force_Release_Reset AHB2 Force Release Reset
- * @brief  Force or release AHB2 peripheral reset.
- * @{
- */
+  * @brief  Force or release AHB2 peripheral reset.
+  * @{
+  */
 #if defined (STM32F415xx) || defined (STM32F417xx)
 #define __HAL_RCC_AHB2_FORCE_RESET()         (RCC->AHB2RSTR = 0x000000F1U)
 #endif /* STM32F415xx || STM32F417xx */
@@ -2665,26 +2669,26 @@ typedef struct {
 #define __HAL_RCC_RNG_FORCE_RESET()    (RCC->AHB2RSTR |= (RCC_AHB2RSTR_RNGRST))
 #define __HAL_RCC_RNG_RELEASE_RESET()  (RCC->AHB2RSTR &= ~(RCC_AHB2RSTR_RNGRST))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB3_Force_Release_Reset AHB3 Force Release Reset
- * @brief  Force or release AHB3 peripheral reset.
- * @{
- */
+  * @brief  Force or release AHB3 peripheral reset.
+  * @{
+  */
 #define __HAL_RCC_AHB3_FORCE_RESET()   (RCC->AHB3RSTR = 0x00000001U)
 #define __HAL_RCC_AHB3_RELEASE_RESET() (RCC->AHB3RSTR = 0x00U)
 
 #define __HAL_RCC_FSMC_FORCE_RESET()   (RCC->AHB3RSTR |= (RCC_AHB3RSTR_FSMCRST))
 #define __HAL_RCC_FSMC_RELEASE_RESET() (RCC->AHB3RSTR &= ~(RCC_AHB3RSTR_FSMCRST))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB1_Force_Release_Reset APB1 Force Release Reset
- * @brief  Force or release APB1 peripheral reset.
- * @{
- */
+  * @brief  Force or release APB1 peripheral reset.
+  * @{
+  */
 #define __HAL_RCC_APB1_FORCE_RESET()     (RCC->APB1RSTR = 0xF6FEC9FFU)
 #define __HAL_RCC_TIM6_FORCE_RESET()     (RCC->APB1RSTR |= (RCC_APB1RSTR_TIM6RST))
 #define __HAL_RCC_TIM7_FORCE_RESET()     (RCC->APB1RSTR |= (RCC_APB1RSTR_TIM7RST))
@@ -2720,13 +2724,13 @@ typedef struct {
 #define __HAL_RCC_CAN2_RELEASE_RESET()   (RCC->APB1RSTR &= ~(RCC_APB1RSTR_CAN2RST))
 #define __HAL_RCC_DAC_RELEASE_RESET()    (RCC->APB1RSTR &= ~(RCC_APB1RSTR_DACRST))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB2_Force_Release_Reset APB2 Force Release Reset
- * @brief  Force or release APB2 peripheral reset.
- * @{
- */
+  * @brief  Force or release APB2 peripheral reset.
+  * @{
+  */
 #define __HAL_RCC_APB2_FORCE_RESET()   (RCC->APB2RSTR = 0x04777933U)
 #define __HAL_RCC_TIM8_FORCE_RESET()   (RCC->APB2RSTR |= (RCC_APB2RSTR_TIM8RST))
 #define __HAL_RCC_SDIO_FORCE_RESET()   (RCC->APB2RSTR |= (RCC_APB2RSTR_SDIORST))
@@ -2738,17 +2742,17 @@ typedef struct {
 #define __HAL_RCC_TIM10_RELEASE_RESET()(RCC->APB2RSTR &= ~(RCC_APB2RSTR_TIM10RST))
 #define __HAL_RCC_TIM8_RELEASE_RESET() (RCC->APB2RSTR &= ~(RCC_APB2RSTR_TIM8RST))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB1_LowPower_Enable_Disable AHB1 Peripheral Low Power Enable Disable
- * @brief  Enable or disable the AHB1 peripheral clock during Low Power (Sleep) mode.
- * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
- *         power consumption.
- * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
- * @note   By default, all peripheral clocks are enabled during SLEEP mode.
- * @{
- */
+  * @brief  Enable or disable the AHB1 peripheral clock during Low Power (Sleep) mode.
+  * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
+  *         power consumption.
+  * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
+  * @note   By default, all peripheral clocks are enabled during SLEEP mode.
+  * @{
+  */
 #define __HAL_RCC_GPIOD_CLK_SLEEP_ENABLE()      (RCC->AHB1LPENR |= (RCC_AHB1LPENR_GPIODLPEN))
 #define __HAL_RCC_GPIOE_CLK_SLEEP_ENABLE()      (RCC->AHB1LPENR |= (RCC_AHB1LPENR_GPIOELPEN))
 #define __HAL_RCC_GPIOF_CLK_SLEEP_ENABLE()      (RCC->AHB1LPENR |= (RCC_AHB1LPENR_GPIOFLPEN))
@@ -2783,17 +2787,17 @@ typedef struct {
 #define __HAL_RCC_SRAM1_CLK_SLEEP_DISABLE()     (RCC->AHB1LPENR &= ~(RCC_AHB1LPENR_SRAM1LPEN))
 #define __HAL_RCC_BKPSRAM_CLK_SLEEP_DISABLE()   (RCC->AHB1LPENR &= ~(RCC_AHB1LPENR_BKPSRAMLPEN))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB2_LowPower_Enable_Disable AHB2 Peripheral Low Power Enable Disable
- * @brief  Enable or disable the AHB2 peripheral clock during Low Power (Sleep) mode.
- * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
- *         power consumption.
- * @note   After wake-up from SLEEP mode, the peripheral clock is enabled again.
- * @note   By default, all peripheral clocks are enabled during SLEEP mode.
- * @{
- */
+  * @brief  Enable or disable the AHB2 peripheral clock during Low Power (Sleep) mode.
+  * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
+  *         power consumption.
+  * @note   After wake-up from SLEEP mode, the peripheral clock is enabled again.
+  * @note   By default, all peripheral clocks are enabled during SLEEP mode.
+  * @{
+  */
 #define __HAL_RCC_USB_OTG_FS_CLK_SLEEP_ENABLE()  (RCC->AHB2LPENR |= (RCC_AHB2LPENR_OTGFSLPEN))
 #define __HAL_RCC_USB_OTG_FS_CLK_SLEEP_DISABLE() (RCC->AHB2LPENR &= ~(RCC_AHB2LPENR_OTGFSLPEN))
 
@@ -2813,31 +2817,31 @@ typedef struct {
 #define __HAL_RCC_HASH_CLK_SLEEP_DISABLE() (RCC->AHB2LPENR &= ~(RCC_AHB2LPENR_HASHLPEN))
 #endif /* STM32F415xx || STM32F417xx */
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_AHB3_LowPower_Enable_Disable AHB3 Peripheral Low Power Enable Disable
- * @brief  Enable or disable the AHB3 peripheral clock during Low Power (Sleep) mode.
- * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
- *         power consumption.
- * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
- * @note   By default, all peripheral clocks are enabled during SLEEP mode.
- * @{
- */
+  * @brief  Enable or disable the AHB3 peripheral clock during Low Power (Sleep) mode.
+  * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
+  *         power consumption.
+  * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
+  * @note   By default, all peripheral clocks are enabled during SLEEP mode.
+  * @{
+  */
 #define __HAL_RCC_FSMC_CLK_SLEEP_ENABLE()  (RCC->AHB3LPENR |= (RCC_AHB3LPENR_FSMCLPEN))
 #define __HAL_RCC_FSMC_CLK_SLEEP_DISABLE() (RCC->AHB3LPENR &= ~(RCC_AHB3LPENR_FSMCLPEN))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB1_LowPower_Enable_Disable APB1 Peripheral Low Power Enable Disable
- * @brief  Enable or disable the APB1 peripheral clock during Low Power (Sleep) mode.
- * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
- *         power consumption.
- * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
- * @note   By default, all peripheral clocks are enabled during SLEEP mode.
- * @{
- */
+  * @brief  Enable or disable the APB1 peripheral clock during Low Power (Sleep) mode.
+  * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
+  *         power consumption.
+  * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
+  * @note   By default, all peripheral clocks are enabled during SLEEP mode.
+  * @{
+  */
 #define __HAL_RCC_TIM6_CLK_SLEEP_ENABLE()    (RCC->APB1LPENR |= (RCC_APB1LPENR_TIM6LPEN))
 #define __HAL_RCC_TIM7_CLK_SLEEP_ENABLE()    (RCC->APB1LPENR |= (RCC_APB1LPENR_TIM7LPEN))
 #define __HAL_RCC_TIM12_CLK_SLEEP_ENABLE()   (RCC->APB1LPENR |= (RCC_APB1LPENR_TIM12LPEN))
@@ -2872,17 +2876,17 @@ typedef struct {
 #define __HAL_RCC_CAN2_CLK_SLEEP_DISABLE()   (RCC->APB1LPENR &= ~(RCC_APB1LPENR_CAN2LPEN))
 #define __HAL_RCC_DAC_CLK_SLEEP_DISABLE()    (RCC->APB1LPENR &= ~(RCC_APB1LPENR_DACLPEN))
 /**
- * @}
- */
+  * @}
+  */
 
 /** @defgroup RCCEx_APB2_LowPower_Enable_Disable APB2 Peripheral Low Power Enable Disable
- * @brief  Enable or disable the APB2 peripheral clock during Low Power (Sleep) mode.
- * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
- *         power consumption.
- * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
- * @note   By default, all peripheral clocks are enabled during SLEEP mode.
- * @{
- */
+  * @brief  Enable or disable the APB2 peripheral clock during Low Power (Sleep) mode.
+  * @note   Peripheral clock gating in SLEEP mode can be used to further reduce
+  *         power consumption.
+  * @note   After wakeup from SLEEP mode, the peripheral clock is enabled again.
+  * @note   By default, all peripheral clocks are enabled during SLEEP mode.
+  * @{
+  */
 #define __HAL_RCC_TIM8_CLK_SLEEP_ENABLE() (RCC->APB2LPENR |= (RCC_APB2LPENR_TIM8LPEN))
 #define __HAL_RCC_ADC2_CLK_SLEEP_ENABLE() (RCC->APB2LPENR |= (RCC_APB2LPENR_ADC2LPEN))
 #define __HAL_RCC_ADC3_CLK_SLEEP_ENABLE() (RCC->APB2LPENR |= (RCC_APB2LPENR_ADC3LPEN))
@@ -2897,8 +2901,8 @@ typedef struct {
 #define __HAL_RCC_ADC2_CLK_SLEEP_DISABLE() (RCC->APB2LPENR &= ~(RCC_APB2LPENR_ADC2LPEN))
 #define __HAL_RCC_ADC3_CLK_SLEEP_DISABLE() (RCC->APB2LPENR &= ~(RCC_APB2LPENR_ADC3LPEN))
 /**
- * @}
- */
+  * @}
+  */
 #endif /* STM32F405xx || STM32F415xx || STM32F407xx || STM32F417xx */
 /*----------------------------------------------------------------------------*/
 
@@ -5835,34 +5839,34 @@ typedef struct {
                    ((__PLLR__) << RCC_PLLCFGR_PLLR_Pos)))
 #else
 /** @brief  Macro to configure the main PLL clock source, multiplication and division factors.
- * @note   This function must be used only when the main PLL is disabled.
- * @param  __RCC_PLLSource__ specifies the PLL entry clock source.
- *         This parameter can be one of the following values:
- *            @arg RCC_PLLSOURCE_HSI: HSI oscillator clock selected as PLL clock entry
- *            @arg RCC_PLLSOURCE_HSE: HSE oscillator clock selected as PLL clock entry
- * @note   This clock source (RCC_PLLSource) is common for the main PLL and PLLI2S.
- * @param  __PLLM__ specifies the division factor for PLL VCO input clock
- *         This parameter must be a number between Min_Data = 2 and Max_Data = 63.
- * @note   You have to set the PLLM parameter correctly to ensure that the VCO input
- *         frequency ranges from 1 to 2 MHz. It is recommended to select a frequency
- *         of 2 MHz to limit PLL jitter.
- * @param  __PLLN__ specifies the multiplication factor for PLL VCO output clock
- *         This parameter must be a number between Min_Data = 50 and Max_Data = 432
- *         Except for STM32F411xE devices where Min_Data = 192.
- * @note   You have to set the PLLN parameter correctly to ensure that the VCO
- *         output frequency is between 100 and 432 MHz, Except for STM32F411xE devices
- *         where frequency is between 192 and 432 MHz.
- * @param  __PLLP__ specifies the division factor for main system clock (SYSCLK)
- *         This parameter must be a number in the range {2, 4, 6, or 8}.
- *
- * @param  __PLLQ__ specifies the division factor for OTG FS, SDIO and RNG clocks
- *         This parameter must be a number between Min_Data = 2 and Max_Data = 15.
- * @note   If the USB OTG FS is used in your application, you have to set the
- *         PLLQ parameter correctly to have 48 MHz clock for the USB. However,
- *         the SDIO and RNG need a frequency lower than or equal to 48 MHz to work
- *         correctly.
- *
- */
+  * @note   This function must be used only when the main PLL is disabled.
+  * @param  __RCC_PLLSource__ specifies the PLL entry clock source.
+  *         This parameter can be one of the following values:
+  *            @arg RCC_PLLSOURCE_HSI: HSI oscillator clock selected as PLL clock entry
+  *            @arg RCC_PLLSOURCE_HSE: HSE oscillator clock selected as PLL clock entry
+  * @note   This clock source (RCC_PLLSource) is common for the main PLL and PLLI2S.
+  * @param  __PLLM__ specifies the division factor for PLL VCO input clock
+  *         This parameter must be a number between Min_Data = 2 and Max_Data = 63.
+  * @note   You have to set the PLLM parameter correctly to ensure that the VCO input
+  *         frequency ranges from 1 to 2 MHz. It is recommended to select a frequency
+  *         of 2 MHz to limit PLL jitter.
+  * @param  __PLLN__ specifies the multiplication factor for PLL VCO output clock
+  *         This parameter must be a number between Min_Data = 50 and Max_Data = 432
+  *         Except for STM32F411xE devices where Min_Data = 192.
+  * @note   You have to set the PLLN parameter correctly to ensure that the VCO
+  *         output frequency is between 100 and 432 MHz, Except for STM32F411xE devices
+  *         where frequency is between 192 and 432 MHz.
+  * @param  __PLLP__ specifies the division factor for main system clock (SYSCLK)
+  *         This parameter must be a number in the range {2, 4, 6, or 8}.
+  *
+  * @param  __PLLQ__ specifies the division factor for OTG FS, SDIO and RNG clocks
+  *         This parameter must be a number between Min_Data = 2 and Max_Data = 15.
+  * @note   If the USB OTG FS is used in your application, you have to set the
+  *         PLLQ parameter correctly to have 48 MHz clock for the USB. However,
+  *         the SDIO and RNG need a frequency lower than or equal to 48 MHz to work
+  *         correctly.
+  *
+  */
 #define __HAL_RCC_PLL_CONFIG(__RCC_PLLSource__, __PLLM__, __PLLN__, __PLLP__, __PLLQ__)     \
   (RCC->PLLCFGR = (0x20000000U | (__RCC_PLLSource__) | (__PLLM__)| \
                    ((__PLLN__) << RCC_PLLCFGR_PLLN_Pos)                | \
@@ -5879,8 +5883,8 @@ typedef struct {
     defined(STM32F412Rx) || defined(STM32F412Cx) || defined(STM32F413xx) || defined(STM32F423xx)
 
 /** @brief Macros to enable or disable the PLLI2S.
- * @note  The PLLI2S is disabled by hardware when entering STOP and STANDBY modes.
- */
+  * @note  The PLLI2S is disabled by hardware when entering STOP and STANDBY modes.
+  */
 #define __HAL_RCC_PLLI2S_ENABLE() (*(__IO uint32_t *) RCC_CR_PLLI2SON_BB = ENABLE)
 #define __HAL_RCC_PLLI2S_DISABLE() (*(__IO uint32_t *) RCC_CR_PLLI2SON_BB = DISABLE)
 
@@ -5953,20 +5957,20 @@ typedef struct {
                       ((__PLLI2SR__) << RCC_PLLI2SCFGR_PLLI2SR_Pos)))
 #else
 /** @brief  Macro to configure the PLLI2S clock multiplication and division factors .
- * @note   This macro must be used only when the PLLI2S is disabled.
- * @note   PLLI2S clock source is common with the main PLL (configured in
- *         HAL_RCC_ClockConfig() API).
- * @param  __PLLI2SN__ specifies the multiplication factor for PLLI2S VCO output clock
- *         This parameter must be a number between Min_Data = 50 and Max_Data = 432.
- * @note   You have to set the PLLI2SN parameter correctly to ensure that the VCO
- *         output frequency is between Min_Data = 100 and Max_Data = 432 MHz.
- *
- * @param  __PLLI2SR__ specifies the division factor for I2S clock
- *         This parameter must be a number between Min_Data = 2 and Max_Data = 7.
- * @note   You have to set the PLLI2SR parameter correctly to not exceed 192 MHz
- *         on the I2S clock frequency.
- *
- */
+  * @note   This macro must be used only when the PLLI2S is disabled.
+  * @note   PLLI2S clock source is common with the main PLL (configured in
+  *         HAL_RCC_ClockConfig() API).
+  * @param  __PLLI2SN__ specifies the multiplication factor for PLLI2S VCO output clock
+  *         This parameter must be a number between Min_Data = 50 and Max_Data = 432.
+  * @note   You have to set the PLLI2SN parameter correctly to ensure that the VCO
+  *         output frequency is between Min_Data = 100 and Max_Data = 432 MHz.
+  *
+  * @param  __PLLI2SR__ specifies the division factor for I2S clock
+  *         This parameter must be a number between Min_Data = 2 and Max_Data = 7.
+  * @note   You have to set the PLLI2SR parameter correctly to not exceed 192 MHz
+  *         on the I2S clock frequency.
+  *
+  */
 #define __HAL_RCC_PLLI2S_CONFIG(__PLLI2SN__, __PLLI2SR__)                                                    \
   (RCC->PLLI2SCFGR = (((__PLLI2SN__) << RCC_PLLI2SCFGR_PLLI2SN_Pos)  |\
                       ((__PLLI2SR__) << RCC_PLLI2SCFGR_PLLI2SR_Pos)))
@@ -6168,21 +6172,22 @@ typedef struct {
     defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE) || defined(STM32F469xx) ||\
     defined(STM32F479xx)
 /** @brief  Macro to configure the I2S clock source (I2SCLK).
- * @note   This function must be called before enabling the I2S APB clock.
- * @param  __SOURCE__ specifies the I2S clock source.
- *         This parameter can be one of the following values:
- *            @arg RCC_I2SCLKSOURCE_PLLI2S: PLLI2S clock used as I2S clock source.
- *            @arg RCC_I2SCLKSOURCE_EXT: External clock mapped on the I2S_CKIN pin
- *                                       used as I2S clock source.
- */
+  * @note   This function must be called before enabling the I2S APB clock.
+  * @param  __SOURCE__ specifies the I2S clock source.
+  *         This parameter can be one of the following values:
+  *            @arg RCC_I2SCLKSOURCE_PLLI2S: PLLI2S clock used as I2S clock source.
+  *            @arg RCC_I2SCLKSOURCE_EXT: External clock mapped on the I2S_CKIN pin
+  *                                       used as I2S clock source.
+  */
 #define __HAL_RCC_I2S_CONFIG(__SOURCE__) (MODIFY_REG(RCC->CFGR, RCC_CFGR_I2SSRC, (__SOURCE__)))
 
+
 /** @brief  Macro to get the I2S clock source (I2SCLK).
- * @retval The clock source can be one of the following values:
- *            @arg @ref RCC_I2SCLKSOURCE_PLLI2S: PLLI2S clock used as I2S clock source.
- *            @arg @ref RCC_I2SCLKSOURCE_EXT External clock mapped on the I2S_CKIN pin
- *                                        used as I2S clock source
- */
+  * @retval The clock source can be one of the following values:
+  *            @arg @ref RCC_I2SCLKSOURCE_PLLI2S: PLLI2S clock used as I2S clock source.
+  *            @arg @ref RCC_I2SCLKSOURCE_EXT External clock mapped on the I2S_CKIN pin
+  *                                        used as I2S clock source
+  */
 #define __HAL_RCC_GET_I2S_SOURCE() ((uint32_t)(READ_BIT(RCC->CFGR, RCC_CFGR_I2SSRC)))
 #endif /* STM32F40xxx || STM32F41xxx || STM32F42xxx || STM32F43xxx || STM32F469xx || STM32F479xx */
 
@@ -6787,20 +6792,19 @@ typedef struct {
 #endif /* STM32F410Tx || STM32F410Cx || STM32F410Rx */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /* Exported functions --------------------------------------------------------*/
 /** @addtogroup RCCEx_Exported_Functions
- *  @{
- */
+  *  @{
+  */
 
 /** @addtogroup RCCEx_Exported_Functions_Group1
- *  @{
- */
-HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(
-		RCC_PeriphCLKInitTypeDef *PeriphClkInit);
-void HAL_RCCEx_GetPeriphCLKConfig(RCC_PeriphCLKInitTypeDef *PeriphClkInit);
+  *  @{
+  */
+HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit);
+void HAL_RCCEx_GetPeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit);
 
 uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk);
 
@@ -6811,7 +6815,7 @@ uint32_t HAL_RCCEx_GetPeriphCLKFreq(uint32_t PeriphClk);
 void HAL_RCCEx_SelectLSEMode(uint8_t Mode);
 #endif /* STM32F410xx || STM32F411xE || STM32F446xx || STM32F469xx || STM32F479xx || STM32F412Zx || STM32F412Vx || STM32F412Rx || STM32F412Cx || STM32F413xx || STM32F423xx */
 #if defined(RCC_PLLI2S_SUPPORT)
-HAL_StatusTypeDef HAL_RCCEx_EnablePLLI2S(RCC_PLLI2SInitTypeDef *PLLI2SInit);
+HAL_StatusTypeDef HAL_RCCEx_EnablePLLI2S(RCC_PLLI2SInitTypeDef  *PLLI2SInit);
 HAL_StatusTypeDef HAL_RCCEx_DisablePLLI2S(void);
 #endif /* RCC_PLLI2S_SUPPORT */
 #if defined(RCC_PLLSAI_SUPPORT)
@@ -6819,23 +6823,23 @@ HAL_StatusTypeDef HAL_RCCEx_EnablePLLSAI(RCC_PLLSAIInitTypeDef  *PLLSAIInit);
 HAL_StatusTypeDef HAL_RCCEx_DisablePLLSAI(void);
 #endif /* RCC_PLLSAI_SUPPORT */
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 /* Private types -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private constants ---------------------------------------------------------*/
 /** @defgroup RCCEx_Private_Constants RCCEx Private Constants
- * @{
- */
+  * @{
+  */
 
 /** @defgroup RCCEx_BitAddress_AliasRegion RCC BitAddress AliasRegion
- * @brief RCC registers bit address in the alias region
- * @{
- */
+  * @brief RCC registers bit address in the alias region
+  * @{
+  */
 /* --- CR Register ---*/
 #if defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx) || defined(STM32F439xx) ||\
     defined(STM32F446xx) || defined(STM32F469xx) || defined(STM32F479xx)
@@ -6910,20 +6914,20 @@ HAL_StatusTypeDef HAL_RCCEx_DisablePLLSAI(void);
 
 #define PLL_TIMEOUT_VALUE          2U  /* 2 ms */
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /* Private macros ------------------------------------------------------------*/
 /** @defgroup RCCEx_Private_Macros RCCEx Private Macros
- * @{
- */
+  * @{
+  */
 /** @defgroup RCCEx_IS_RCC_Definitions RCC Private macros to check input parameters
- * @{
- */
+  * @{
+  */
 #define IS_RCC_PLLN_VALUE(VALUE) ((50U <= (VALUE)) && ((VALUE) <= 432U))
 #define IS_RCC_PLLI2SN_VALUE(VALUE) ((50U <= (VALUE)) && ((VALUE) <= 432U))
 
@@ -7164,20 +7168,20 @@ HAL_StatusTypeDef HAL_RCCEx_DisablePLLSAI(void);
                                    ((SOURCE) == RCC_MCO2SOURCE_HSE)    || ((SOURCE) == RCC_MCO2SOURCE_PLLCLK))
 #endif /* STM32F410Tx || STM32F410Cx || STM32F410Rx */
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 
 /**
- * @}
- */
+  * @}
+  */
 #ifdef __cplusplus
 }
 #endif

@@ -8,13 +8,13 @@ C_SRCS += \
 ../Drivers/TMC2209/softuart.c \
 ../Drivers/TMC2209/tmc2209_stm32.c 
 
-OBJS += \
-./Drivers/TMC2209/softuart.o \
-./Drivers/TMC2209/tmc2209_stm32.o 
-
 C_DEPS += \
 ./Drivers/TMC2209/softuart.d \
 ./Drivers/TMC2209/tmc2209_stm32.d 
+
+OBJS += \
+./Drivers/TMC2209/softuart.o \
+./Drivers/TMC2209/tmc2209_stm32.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -1,5 +1,5 @@
-#ifndef TMC2209_H
-#define TMC2209_H
+#ifndef TMC2209_STM32_H
+#define TMC2209_STM32_H
 
 #include "stm32f4xx_hal.h"
 
@@ -7,7 +7,8 @@
 typedef struct {
 	uint32_t targetSteps;     // 目标步数
 	uint32_t currentSteps;    // 当前已完成步数
-	uint32_t speed;              // 转速 (单位时间内的步数)
+	uint32_t speed;              // 转速 (0-100)
+	uint32_t timsCounter;	// 中断总数
 	int8_t direction;         // 方向：1为正转，-1为反转
 	uint8_t isActive;         // 是否正在运行
 	GPIO_TypeDef *port_en;    // 使能端口
@@ -28,18 +29,16 @@ extern StepperMotorControl motors[];
 void motors_setup(void);
 
 // 电机运动控制
-void TMC2209_startStepperMotor(uint8_t motorIndex, uint32_t steps, float speed,
-		int8_t direction);
+void TMC2209_startStepperMotor(uint8_t motorIndex, uint32_t steps, uint32_t speed, int8_t direction);
 
 // 电机运动控制定时器中断回调
 void TMC2209_stepHandler(void);
 
 // 软件串口发送消息
-void TMC2209_sendRawMessage(uint8_t instance, const uint8_t *message,
-		size_t length);
+void TMC2209_sendRawMessage(uint8_t instance, const uint8_t *message, size_t length);
 
-// TMC2209初始化
-void TMC2209_Init(uint8_t instance);
+// TMC2209 GCONF 全局配置寄存器初始化
+void TMC2209_setGconf(uint8_t instance);
 
 // TMC2209设置电机运行电流100%
 void TMC2209_setRunCurrent_100(uint8_t instance);
@@ -49,13 +48,13 @@ void TMC2209_setRunCurrent(uint8_t instance, uint8_t percentage);
 // TMC2209启用coolstep
 void TMC2209_enableCoolStep(uint8_t instance);
 
-// TMC2209启动
-void TMC2209_enable(uint8_t instance);
-
 // TMC2209设置速度
 void TMC2209_moveAtVelocity(uint8_t instance, uint32_t speed);
 
 // TMC2209启用stallguard
 void TMC2209_enableStallGuard(uint8_t instance);
 
-#endif // TMC2209_H
+// TMC2209设置细分等级
+void TMC2209_setMicrostepping(uint8_t instance, uint8_t mres_value);
+
+#endif // TMC2209_STM32_H

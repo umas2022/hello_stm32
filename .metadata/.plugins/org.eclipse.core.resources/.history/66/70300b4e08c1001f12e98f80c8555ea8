@@ -1,0 +1,28 @@
+#include "tmc2209.h"
+
+uint32_t reverseData(uint32_t data)
+{
+  uint32_t reversed_data = 0;
+  uint8_t right_shift;
+  uint8_t left_shift;
+  for (uint8_t i=0; i<DATA_SIZE; ++i)
+  {
+    right_shift = (DATA_SIZE - i - 1) * BITS_PER_BYTE;
+    left_shift = i * BITS_PER_BYTE;
+    reversed_data |= ((data >> right_shift) & BYTE_MAX_VALUE) << left_shift;
+  }
+  return reversed_data;
+}
+
+void write(uint8_t register_address, uint32_t data) {
+	WriteReadReplyDatagram write_datagram;
+	write_datagram.bytes = 0;
+	write_datagram.sync = SYNC;
+	write_datagram.serial_address = 0 ;
+	write_datagram.register_address = register_address;
+	write_datagram.rw = RW_WRITE;
+//	write_datagram.data = reverseData(data);
+//	write_datagram.crc = calculateCrc(write_datagram, WRITE_READ_REPLY_DATAGRAM_SIZE);
+//
+//	sendDatagramUnidirectional(write_datagram, WRITE_READ_REPLY_DATAGRAM_SIZE);
+}
