@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;407vet6_monster_2209mix/Drivers/TMC2209/tmc2209.c&apos; to &apos;tmc2209.cpp&apos;" description="Rename resource &apos;tmc2209.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/TMC2209/tmc2209.c" name="tmc2209.cpp" stamp="1734942166579" updateReferences="true"/>
-</session>
