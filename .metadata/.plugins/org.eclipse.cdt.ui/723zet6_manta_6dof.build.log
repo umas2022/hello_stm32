@@ -1,0 +1,10 @@
+22:05:31 **** Incremental Build of configuration Debug for project 723zet6_manta_6dof ****
+make -j12 all 
+arm-none-eabi-size  723zet6_manta_6dof.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6252	     12	   1572	   7836	   1e9c	723zet6_manta_6dof.elf
+Finished building: default.size.stdout
+ 
+
+22:05:31 Build Finished. 0 errors, 0 warnings. (took 535ms)
+
